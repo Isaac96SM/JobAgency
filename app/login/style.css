@@ -1,1 +1,10 @@
-# Empty CSS file for your own CSS
+title2{
+    color: black;
+}
+title3{
+    color: black;
+    margin-bottom: 10px;
+}
+#fondo{
+    background-color:#990033;
+}
