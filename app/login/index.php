@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') { //se ha rellenado el form de logeo
 				    session_start();
 				    $_SESSION['name'] = $row1['name'];
 				    $_SESSION['email'] = $_POST['email'];
-				    //header("location: ../homeUser/homeUser.html");
+				    //header("location: ../homeUser/homeUser.php");
 						}			
 
 					}else{
