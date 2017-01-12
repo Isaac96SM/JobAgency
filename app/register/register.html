@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Sign Up in JobAgency!</title>
+    <title>Register in JobNow!</title>
 
     <meta name="author" content="IAW-Team">
 
@@ -14,81 +14,81 @@
 
   </head>
   <body>
-
+<div style="background-image: url(../../models/images/wallpaper1.jpg);">
     <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-8">
 			<div class="page-header">
 				<h1>
-					JobAgency <small>Find your future</small>
+				<img src="../../models/images/logo2.png" width="50%">
 				</h1>
+				
 			</div>
-		</div>
-		<div class="col-md-4">
-			<img alt="Bootstrap Image Preview" src="http://lorempixel.com/140/140/" class="img-circle">
-		</div>
+		</div>	
 	</div>
 	<div class="row">
 		<div class="col-md-12">
-			<h3 class="text-center text-primary">
-				Sign Up to use the platform 
+			<h3 class="text-center" name="title2"  style="color:white;">
+				Sign up to use the platform 
 			</h3>
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-md-12">
+		<div id="cuerpo" class="col-md-12">
 			<form role="form" action="register.php" method="post">
-				<div class="form-group">
+				<div class="form-group col-md-2 col-md-offset-5">
 					 
-					<label for="Email">
+					<label for="Email" style="color:white;">
 						Email address
 					</label>
 					<input type="email" name="email" class="form-control" id="Email">
 				</div>
-				<div class="form-group">
+				<div class="form-group col-md-2 col-md-offset-5">
 					 
-					<label for="Email1">
+					<label for="Email1" style="color:white;">
 						Name
 					</label>
 					<input type="name" name="name" class="form-control" id="Name">
 				</div>
-				<div class="form-group">
+				<div class="form-group col-md-2 col-md-offset-5">
 					 
-					<label for="Password2">
+					<label for="Password2"  style="color:white;">
 						Password
 					</label>
 					<input type="password" name="pass1"class="form-control" id="Password1">
 				</div>
-				<div class="form-group">
+				<div class="form-group col-md-2 col-md-offset-5">
 					 
-					<label for="Password2">
+					
+					<label for="Password2"  style="color:white;">
 						Confirm Password
 					</label>
 					<input type="password" name="pass2" class="form-control" id="Password2">
 				</div>
 				<div class="form-group">
 					<div class="col-sm-offset-2 col-sm-10">
-						<div class="checkbox">
-							 
-							<label>
+						<div class="checkbox col-xs-2 col-xs-offset-4">
+							<label  style="color:white;">
 								<input name="class" type="radio" value="users" /> I'm a particular
 							</label>
-							<label>
+							<label  style="color:white;">
 								<input name="class" type="radio" value="companies" /> I'm a Company
 							</label>
 						</div>
 					</div>
 				</div>
+				<div class="col-xs-2 col-xs-offset-5">
 				<button type="submit" class="btn btn-default">
 					Sign Up
 				</button>
+				</div>
 			</form>
 		</div>
 	</div>
 	<div class="row" style="clear: both;">
 		<div class="col-md-12">
-			<p class="text-left text-info">
-				Copyright &#169; 2016 JobAgency</br>
+			<p id="fondo" class="text-center text-info" style="margin-top:85px;">
+				Copyright &#169; 2016 JobNow!</br>
 				All rights reserved
 
 				This product is protected by copyright and distributed </br>
@@ -97,7 +97,7 @@
 		</div>
 	</div>
 </div>
-
+</div>
     <script src="../../models/js/jquery.min.js"></script>
     <script src="../../models/js/bootstrap.min.js"></script>
     <script src="../../models/js/scripts.js"></script>
