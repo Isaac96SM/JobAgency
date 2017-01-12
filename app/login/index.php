@@ -2,7 +2,7 @@
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') { //se ha rellenado el form de logeo
 
-	require ('../mysqli_connect.php'); //nos conectamos a la DB
+	require ('models/mysqli_connect.php'); //nos conectamos a la DB
 
 	$q = "SELECT Email AS email, Password AS password FROM users WHERE Email ='".$_POST['email']."' LIMIT 1";
 
@@ -23,13 +23,26 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') { //se ha rellenado el form de logeo
 
 				while ($row1 = mysqli_fetch_array($r, MYSQLI_ASSOC)) {
 					echo "Loggeado como: ".$row1['name'];
-				}			
+					echo "<br>";
+					echo $_SESSION['email'];
+				    if(isset($_POST['remember'])){
+					setcookie('UserID', $id, time()+31536000);
+					setcookie('Name', $name, time()+31536000);
+					setcookie('Email', $_POST['email'], time()+31536000);
+					setcookie('Password', $_POST['pass'], time()+31536000);
+				    }
+				    session_start();
+				    $_SESSION['name'] = $row1['name'];
+				    $_SESSION['email'] = $_POST['email'];
+				    //header("location: ../homeUser/homeUser.html");
+						}			
 
-			}else{
+					}else{
 
-				echo "No te has logeado, nombre o contraseña incorrecto.";
+						echo "No te has logeado, nombre o contraseña incorrecto.<br>";
+						echo "You aren't logged, name or password are incorrect.";
 
-			}
+					}
 			
 		}
 
