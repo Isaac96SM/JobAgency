@@ -2,7 +2,7 @@
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') { //se ha rellenado el form de logeo
 
-	require ('models/mysqli_connect.php'); //nos conectamos a la DB
+	require ('../../models/mysqli_connect.php'); //nos conectamos a la DB
 
 	$q = "SELECT Email AS email, Password AS password FROM users WHERE Email ='".$_POST['email']."' LIMIT 1";
 
