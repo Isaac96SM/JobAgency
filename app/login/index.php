@@ -25,28 +25,26 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') { //se ha rellenado el form de logeo
 					echo "Loggeado como: ".$row1['name'];
 					echo "<br>";
 					echo $_SESSION['email'];
-				    if(isset($_POST['remember'])){
 					setcookie('UserID', $id, time()+31536000);
 					setcookie('Name', $name, time()+31536000);
 					setcookie('Email', $_POST['email'], time()+31536000);
-					setcookie('Password', $_POST['pass'], time()+31536000);
-				    }
-				    session_start();
-				    $_SESSION['name'] = $row1['name'];
-				    $_SESSION['email'] = $_POST['email'];
-				    //header("location: ../homeUser/homeUser.php");
-						}			
+					setcookie('Password', $_POST['pass'], time()+31536000)
+					session_start();
+					$_SESSION['name'] = $row1['name'];
+					$_SESSION['email'] = $_POST['email'];
+				    	//header("location: ../homeUser/homeUser.php");
+				}			
 
-					}else{
+				}else{
 
-						echo "No te has logeado, nombre o contraseña incorrecto.<br>";
-						echo "You aren't logged, name or password are incorrect.";
+					echo "No te has logeado, nombre o contraseña incorrecto.<br>";
+					echo "You aren't logged, name or password are incorrect.";
 
-					}
+				}
 			
-		}
+			}
 
-	}
+		}
 
 	mysqli_close($dbc); // cerramos la conexion con la DB
 }
