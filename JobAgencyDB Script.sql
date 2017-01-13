@@ -38,6 +38,7 @@ CREATE TABLE `offers` (
   `Title` varchar(50) NOT NULL,
   `Description` varchar(500) NOT NULL,
   `CompanyID` int(11) NOT NULL
+
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
