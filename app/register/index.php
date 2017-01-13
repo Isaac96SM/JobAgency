@@ -41,21 +41,21 @@
 					<label for="Email" style="color:white;">
 						Email address
 					</label>
-					<input type="email" class="form-control" id="Email">
+					<input type="email" class="form-control" name='email' id="Email" value=<?php if (isset($newemail)) echo htmlentities($newemail); ?>>
 				</div>
 				<div class="form-group col-md-2 col-md-offset-5">
 					 
 					<label for="Email1" style="color:white;">
 						Name
 					</label>
-					<input type="name" class="form-control" id="Name">
+					<input type="name" class="form-control" name='name' id="Name" value=<?php if (isset($name)) echo htmlentities($name); ?>>
 				</div>
 				<div class="form-group col-md-2 col-md-offset-5">
 					 
 					<label for="Password2"  style="color:white;">
 						Password
 					</label>
-					<input type="password" class="form-control" id="Password1">
+					<input type="password" class="form-control" name='pass1' id="Password1">
 				</div>
 				<div class="form-group col-md-2 col-md-offset-5">
 					 
@@ -64,17 +64,17 @@
 						Confirm Password
 					</label>
 					
-					<input type="password" class="form-control" id="Password2">
+					<input type="password" class="form-control" name='pass2' id="Password2">
 				</div>
 				<div class="form-group">
 					<div class="col-sm-offset-2 col-sm-10">
 						<div class="checkbox col-xs-2 col-xs-offset-4">
 							 
 							<label  style="color:white;">
-								<input name="class" type="radio" /> I'm a particular
+								<input name="class" type="radio" value="users" checked/> I'm a particular
 							</label>
 							<label  style="color:white;">
-								<input name="class" type="radio" /> I'm a Company
+								<input name="class" type="radio" value="companies"/> I'm a Company
 							</label>
 						</div>
 					</div>
