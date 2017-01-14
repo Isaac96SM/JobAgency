@@ -1,5 +1,64 @@
-<?php 
+<?php
 include('headerCompanies.html');
-//PHP code to create a new Offer
+if (isset($_GET['Title'])) {
+	$title = $_GET[ 'Title'];
+}
+if (isset($_GET['Description'])) {
+	$description = $_GET['Description'];
+}
+if (isset($_GET['Action'])) {
+    if ($_GET['Action'] == 2) {
+		require ('../../models/mysqli_connect.php');
+        $action = 2;
+		$id = $_GET['OfferID'];
+
+		$q = "SELECT * FROM offers WHERE OfferID = ".$id;
+
+    	$r = @mysqli_query ($dbc, $q);
+
+    	// Count the number of returned rows:
+    	$num = mysqli_num_rows($r);
+
+		if($num == 1) {
+			while ($row = mysqli_fetch_array($r, MYSQLI_ASSOC)) {
+				$title = $row['Title'];
+				$description = $row['Description'];
+			}
+		}
+    } else {
+        $action = 1;
+    }
+} else {
+    $action = 1;
+}
+?>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <form role="form" action="ActionOffer.php?" method="GET">
+          <div class="form-group">
+            <label for="title">
+              Title
+            </label>
+            <input type="title" name="title" class="form-control" id="title" value=<?php if (isset($title)) echo "'".$title."'"; ?>>
+            </input>
+          </div>
+          <div class="form-group">
+
+            <label for="description">
+              Description
+            </label>
+            <textarea type="description" rows="10" cols="0" name="description" class="form-control" id="description"><?php if (isset($description)) echo $description; ?></textarea>
+            <input for="action" type="action" id="action" name="Action" value=<?php echo $action; ?> hidden></input>
+			<?php if(isset($id)) { echo '<input for="id" type="id" id="id" name="OfferID" value='.$id.' hidden></input>';} ?>
+          </div>
+          <button type="submit" class="btn btn-primary">
+			<?php if($action == 1){ echo 'Create Offer'; } elseif ($action == 2){ echo 'Update Offer'; } ?>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <?php
 include('footer.html');
 ?>
