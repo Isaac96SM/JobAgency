@@ -36,7 +36,7 @@ if ( (isset($_GET['OfferID'])) && (is_numeric($_GET['OfferID'])) ) {
                                     Actions
                                 </dt>
                                 <dd>
-                                    <a href="ActionOffer.php?Action=2&OfferID=' . $row['OfferID'] . '">
+                                    <a href="NewOffer.php?Action=2&OfferID=' . $row['OfferID'] . '">
                                         <button type="button" class="btn btn-sm btn-warning">
                                             Edit Offer
                                         </button>
