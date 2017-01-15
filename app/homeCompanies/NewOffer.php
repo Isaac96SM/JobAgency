@@ -1,7 +1,7 @@
 <?php
 include('headerCompanies.html');
 if (isset($_GET['Title'])) {
-	$title = $_GET[ 'Title'];
+  $title = $_GET[ 'Title'];
 }
 if (isset($_GET['Description'])) {
 	$description = $_GET['Description'];
@@ -9,7 +9,7 @@ if (isset($_GET['Description'])) {
 if (isset($_GET['Action'])) {
     if ($_GET['Action'] == 2) {
 		require ('../../models/mysqli_connect.php');
-        $action = 2;
+    $action = 2;
 		$id = $_GET['OfferID'];
 
 		$q = "SELECT * FROM offers WHERE OfferID = ".$id;
