@@ -1,6 +1,7 @@
 <?php 
 include('headerCompanies.html');
 //PHP code to show Offer info
+$check = false;
 if ( (isset($_GET['OfferID'])) && (is_numeric($_GET['OfferID'])) ) {
 	require ('../../models/mysqli_connect.php');
     $id = $_GET['OfferID'];
@@ -10,8 +11,19 @@ if ( (isset($_GET['OfferID'])) && (is_numeric($_GET['OfferID'])) ) {
 
     // Count the number of returned rows:
     $num = mysqli_num_rows($r);
+    $check = true;
+} elseif ((isset($_POST['Title']))) {
+    require ('../../models/mysqli_connect.php');
+    $title = $_POST['Title'];
+    $q = "SELECT * FROM offers WHERE CompanyID = ".$_COOKIE['CompanyID']." AND Title LIKE '%".$title."%'";
 
-    if($num == 1) {
+    $r = @mysqli_query ($dbc, $q);
+
+    // Count the number of returned rows:
+    $num = mysqli_num_rows($r);
+    $check = true;
+}
+    if($num > 0 && $check) {
         while ($row = mysqli_fetch_array($r, MYSQLI_ASSOC)) {
             echo '<div class="container-fluid">
                     <div class="row">
@@ -71,7 +83,7 @@ if ( (isset($_GET['OfferID'])) && (is_numeric($_GET['OfferID'])) ) {
                 $qi = "SELECT users.UserID, users.Name, users.Email 
                 FROM users INNER JOIN usersoffers 
                 ON users.UserID = usersoffers.UserID 
-                WHERE usersoffers.OfferID =".$id;
+                WHERE usersoffers.OfferID =".$row['OfferID'];
 
                 $ri = @mysqli_query ($dbc, $qi);
 
@@ -113,8 +125,5 @@ if ( (isset($_GET['OfferID'])) && (is_numeric($_GET['OfferID'])) ) {
     } else {
         include('../../models/error.php');
     }
-} else {
-    include('../../models/error.php');
-}
 include('footer.html');
 ?>
