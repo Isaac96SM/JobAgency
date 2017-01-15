@@ -88,13 +88,6 @@ if(isset($_POST['submit'])){
         </div>
     </div>
     <div class="row">
-        <div class="col-md-12">
-            <h3 class="text-center" name="title2" style="color:white;">
-                Sign up to use the platform
-            </h3>
-        </div>
-    </div>
-    <div class="row">
         <div id="cuerpo" class="col-md-12">
             <form role="form" action="" method="post">
                 <div class="form-group col-md-2 col-md-offset-5">
