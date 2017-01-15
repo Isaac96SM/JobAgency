@@ -53,9 +53,9 @@ if($num > 0){ //se ha ejecutado algo
 		    echo	    $row1['Description'];
 		    echo	'</td>';
 		    echo	'<td>
-						<a href="Offer.php?OfferID=' . $row['OfferID'] . '">
+						<a href="ActionOffer.php?Action=1&OfferID=' . $row['OfferID'] . '">
 							<button type="button" class="btn btn-sm btn-primary">
-								Quitarse de una oferta
+								Cancel Inscription
 							</button>
 						</a>
                     </td>    
