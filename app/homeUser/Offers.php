@@ -3,7 +3,7 @@ include('headerUser.html');
 //PHP code to show last offers
 
 require ('../../models/mysqli_connect.php');
-$q = "SELECT * FROM offers ORDER BY OfferID";
+$q = "SELECT * FROM offers ORDER BY OfferID DESC";
 $r = @mysqli_query ($dbc, $q);
 // Count the number of returned rows:
 $num = mysqli_num_rows($r);
@@ -33,6 +33,15 @@ if($num > 0){ //se ha ejecutado algo
 				        </thead>
                         <tbody>';
     while ($row = mysqli_fetch_array($r, MYSQLI_ASSOC)) {
+		$qi = "SELECT * FROM usersoffers WHERE OfferID = ".$row['OfferID']." AND UserID = ".$_COOKIE['UserID']." LIMIT 1";
+		$ri = @mysqli_query ($dbc, $qi);
+		// Count the number of returned rows:
+		$num1 = mysqli_num_rows($ri);
+		if($num1 == 1){
+			$inscribed = true;
+		} else {
+			$inscribed = false;
+		}
             echo '<tr>
 			        <td>';
 		    echo	    $row['OfferID'];	
@@ -42,15 +51,25 @@ if($num > 0){ //se ha ejecutado algo
             echo    '</td>
 				    <td>';
 		    echo	    $row['Description'];
-		    echo	'</td>
-                    <td>
-						<a href="showOffer.php?OfferID=' . $row['OfferID'] . '">
-							<button type="button" class="btn btn-sm btn-primary">
-								Inscript
-							</button>
-						</a>
-                    </td>      
-			    </tr>';
+			if ($inscribed) {
+				echo	'</td>
+						<td>
+								<button type="button" class="btn disabled btn-sm btn-primary">
+									You are inscribed
+								</button>
+						</td>      
+					</tr>';
+			} else {
+				echo	'</td>
+						<td>
+							<a href="showOffer.php?OfferID=' . $row['OfferID'] . '">
+								<button type="button" class="btn btn-sm btn-primary">
+									Inscript
+								</button>
+							</a>
+						</td>      
+					</tr>';
+			}
     }
     echo                '</tbody>
 			        </table>

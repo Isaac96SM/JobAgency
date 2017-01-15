@@ -1,6 +1,7 @@
 <?php 
 include('headerUser.html');
 //PHP code to show Offer info
+$check = false;
 if ( (isset($_GET['OfferID'])) && (is_numeric($_GET['OfferID'])) ) {
 	require ('../../models/mysqli_connect.php');
     $id = $_GET['OfferID'];
@@ -8,15 +9,30 @@ if ( (isset($_GET['OfferID'])) && (is_numeric($_GET['OfferID'])) ) {
     $r = @mysqli_query ($dbc, $q);
     // Count the number of returned rows:
     $num = mysqli_num_rows($r);
-    if($num == 1) {
+    $check = true;
+} elseif (isset($_POST['Title'])) {
+    require ('../../models/mysqli_connect.php');
+    $title = $_POST['Title'];
+    $q = "SELECT * FROM offers WHERE Title LIKE '%".$title."%'";
+    $r = @mysqli_query ($dbc, $q);
+    // Count the number of returned rows:
+    $num = mysqli_num_rows($r);
+    $check = true;
+}
+    if($num > 0 && $check) {
         while ($row = mysqli_fetch_array($r, MYSQLI_ASSOC)) {
+            $qi = "SELECT * FROM usersoffers WHERE UserID = ".$_COOKIE['UserID']." AND OfferID = ".$row['OfferID']." LIMIT 1";
+            $ri = @mysqli_query ($dbc, $qi);
+            // Count the number of returned rows:
+            $numi = mysqli_num_rows($ri);
+
             echo '<div class="container-fluid">
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-12">
                             <h3 class="text-center text-info">
                                 Offer Information
                             </h3>
-                            <dl>
+                            <dl align="center">
                                 <dt>
                                     Title
                                 </dt>
@@ -29,24 +45,24 @@ if ( (isset($_GET['OfferID'])) && (is_numeric($_GET['OfferID'])) ) {
                                 <dd>';
             echo                    $row['Description'].'
                                 </dd>
-                                <dd>
-                                    <a href="ActionOffer.php?Action=2&OfferID=' . $row['OfferID'] . '">
+                                <dd>';
+            if ($numi == 0) {
+                echo                '<a href="ActionOffer.php?Action=2&OfferID=' . $row['OfferID'] . '">
                                         <button type="button" class="btn btn-sm btn-warning">
                                             Inscript
                                         </button>
-                                </dd>
+                                    </a>';
+            } else {
+                echo                '<button type="button" class="btn disabled btn-sm btn-warning">
+                                            Inscribed
+                                    </button>';
+            }                 
+            echo               '</dd>
                             </dl>
                         </div>
                                 </thead>
-                                <tbody>';
-                $qi = "SELECT users.UserID, users.Name, users.Email 
-                FROM users INNER JOIN usersoffers 
-                ON users.UserID = usersoffers.UserID 
-                WHERE usersoffers.OfferID =".$id;
-                $ri = @mysqli_query ($dbc, $qi);
-                $num1 = mysqli_num_rows($ri);
-               
-                echo                '</tbody>
+                                <tbody>               
+                                </tbody>
                                 </table>
                             </div>
                         </div>
@@ -55,8 +71,5 @@ if ( (isset($_GET['OfferID'])) && (is_numeric($_GET['OfferID'])) ) {
     } else {
         include('../../models/error.php');
     }
-} else {
-    include('../../models/error.php');
-}
 include('footer.html');
 ?>
