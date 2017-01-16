@@ -3,7 +3,7 @@ include('headerUser.html');
 //PHP code to show last offers
 
 require ('../../models/mysqli_connect.php');
-$q = "SELECT offers.Title, offers.Description, offers.OfferID, companies.Name FROM offers INNER JOIN companies on offers.CompanyID = companies.CompanyID ORDER BY OfferID DESC";
+$q = "SELECT offers.Title, offers.Category, offers.Description, offers.OfferID, companies.Name FROM offers INNER JOIN companies on offers.CompanyID = companies.CompanyID ORDER BY OfferID DESC";
 $r = @mysqli_query ($dbc, $q);
 // Count the number of returned rows:
 $num = mysqli_num_rows($r);
@@ -26,6 +26,9 @@ if($num > 0){ //se ha ejecutado algo
 								</th>
 						        <th>
 							        Title
+						        </th>
+								<th>
+							        Category
 						        </th>
 						        <th>
 							        Description
@@ -53,7 +56,9 @@ if($num > 0){ //se ha ejecutado algo
 			echo 	$row['Name'];
 			echo			    '</td><td>';
 		    echo		$row['Title'];
-            echo    '</td>
+            echo    '</td><td>';
+						if ($row['Category'] == NULL) { echo 'Others';} else { echo $row['Category'];};
+			echo    '</td>
 				    <td>';
 		    echo	    $row['Description'];
 			if ($inscribed) {

@@ -36,6 +36,7 @@ INSERT INTO `companies` (`CompanyID`, `Name`, `Email`, `Password`, `Registration
 CREATE TABLE `offers` (
   `OfferID` int(11) NOT NULL,
   `Title` varchar(50) NOT NULL,
+  `Category` varchar(50) NULL,
   `Description` varchar(500) NOT NULL,
   `CompanyID` int(11) NOT NULL
 
@@ -45,10 +46,10 @@ CREATE TABLE `offers` (
 -- Volcado de datos para la tabla `offers`
 --
 
-INSERT INTO `offers` (`OfferID`, `Title`, `Description`, `CompanyID`) VALUES
-(1, 'Math Teacher', 'We''re looking for a math teacher for Scientist Bachillerato', 1),
-(2, 'C# Senior Programmer', 'Minimum 8 years programming in C# or seem', 2),
-(3, 'Technical Engineer', 'Minimum 5 years in jobs like that', 3);
+INSERT INTO `offers` (`OfferID`, `Title`, `Category`, `Description`, `CompanyID`) VALUES
+(1, 'Math Teacher', 'Education', 'We''re looking for a math teacher for Scientist Bachillerato', 1),
+(2, 'C# Senior Programmer', 'TIC', 'Minimum 8 years programming in C# or seem', 2),
+(3, 'Technical Engineer', NULL, 'Minimum 5 years in jobs like that', 3);
 
 -- --------------------------------------------------------
 

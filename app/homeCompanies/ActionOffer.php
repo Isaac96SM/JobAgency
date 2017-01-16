@@ -1,14 +1,18 @@
 <?php 
 include('headerCompanies.html');
 //PHP code to create/update/delete Offers
-if ( (isset($_GET['Action'])) && (is_numeric($_GET['Action'])) ) {
+if ( (isset($_POST['Action'])) && (is_numeric($_POST['Action'])) ) {
     require ('../../models/mysqli_connect.php');
-    $Action = $_GET['Action'];
+    $Action = $_POST['Action'];
     if ($Action == 1) {
-        if (!(empty(trim($_GET['title']))) && !(empty(trim($_GET['description'])))) {
-            $title = $_GET['title'];
-            $description = $_GET['description'];
-            $q = "INSERT INTO offers (Title, Description, CompanyID) VALUES ('".$title."','".$description."',".$_COOKIE['CompanyID'].")";
+        if (!(empty(trim($_POST['title']))) && !(empty(trim($_POST['description'])))) {
+            $title = $_POST['title'];
+            $description = $_POST['description'];
+            $category = $_POST['category'];
+            if ($category == 'NULL') {
+                $category = NULL;
+            }
+            $q = "INSERT INTO offers (Title, Category, Description, CompanyID) VALUES ('".$title."','".$category."','".$description."',".$_COOKIE['CompanyID'].")";
 
             $r = @mysqli_query ($dbc, $q);
 
@@ -18,11 +22,11 @@ if ( (isset($_GET['Action'])) && (is_numeric($_GET['Action'])) ) {
                 include('../../models/error.php');
             }
         } else {
-            if (!((empty(trim($_GET['title']))))) {
-                $title = $_GET['title'];
+            if (!((empty(trim($_POST['title']))))) {
+                $title = $_POST['title'];
                 $href = 'NewOffer.php?Title='.$title;
-            } elseif (!((empty(trim($_GET['description']))))) {
-                $description = $_GET['description'];
+            } elseif (!((empty(trim($_POST['description']))))) {
+                $description = $_POST['description'];
                 $href = 'NewOffer.php?Description='.$description;
             } else {
                 $href = 'NewOffer.php';
@@ -45,12 +49,16 @@ if ( (isset($_GET['Action'])) && (is_numeric($_GET['Action'])) ) {
         }
     } 
     elseif ($Action == 2) {
-        if ( (isset($_GET['OfferID'])) && (is_numeric($_GET['OfferID'])) ) {
-            $id = $_GET['OfferID'];
-            if (!(empty(trim($_GET['title']))) && !(empty(trim($_GET['description'])))) {
-            $title = $_GET['title'];
-            $description = $_GET['description'];
-            $q = "UPDATE offers SET Title='".$title."', Description='".$description."' WHERE OfferID=".$id;
+        if ( (isset($_POST['OfferID'])) && (is_numeric($_POST['OfferID'])) ) {
+            $id = $_POST['OfferID'];
+            if (!(empty(trim($_POST['title']))) && !(empty(trim($_POST['description'])))) {
+            $title = $_POST['title'];
+            $description = $_POST['description'];
+            $category = $_POST['category'];
+            if ($category == 'NULL') {
+                $category = NULL;
+            }
+            $q = "UPDATE offers SET Title='".$title."', Description='".$description."', Category='".$category."' WHERE OfferID=".$id;
 
             $r = @mysqli_query ($dbc, $q);
 
@@ -60,11 +68,11 @@ if ( (isset($_GET['Action'])) && (is_numeric($_GET['Action'])) ) {
                 include('../../models/error.php');
             }
         } else {
-            if (!((empty(trim($_GET['title']))))) {
-                $title = $_GET['title'];
+            if (!((empty(trim($_POST['title']))))) {
+                $title = $_POST['title'];
                 $href = 'NewOffer.php?Action=2&OfferID='.$id.'Title='.$title;
-            } elseif (!((empty(trim($_GET['description']))))) {
-                $description = $_GET['description'];
+            } elseif (!((empty(trim($_POST['description']))))) {
+                $description = $_POST['description'];
                 $href = 'NewOffer.php?Action=2&OfferID='.$id.'Description='.$description;
             } else {
                 $href = 'NewOffer.php?Action=2&OfferID='.$id;
