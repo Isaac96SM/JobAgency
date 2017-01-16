@@ -27,6 +27,9 @@ if($num > 0){ //se ha ejecutado algo
 						        <th>
 							        Title
 						        </th>
+								<th>
+							        Category
+						        </th>
 						        <th>
 							        Description
                                 </th>
@@ -54,6 +57,9 @@ if($num > 0){ //se ha ejecutado algo
 				    <td>';
 		    echo		$row['Title'];
             echo    '</td>
+					<td>';
+						if ($row['Category'] == NULL) { echo 'Others';} else { echo $row['Category'];};	
+			echo	'</td>
 				    <td>';
 		    echo	    $row['Description'];
 		    echo	'</td>

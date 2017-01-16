@@ -23,6 +23,7 @@ if (isset($_GET['Action'])) {
 			while ($row = mysqli_fetch_array($r, MYSQLI_ASSOC)) {
 				$title = $row['Title'];
 				$description = $row['Description'];
+        $category = $row['Category'];
 			}
 		}
     } else {
@@ -35,7 +36,7 @@ if (isset($_GET['Action'])) {
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-12">
-        <form role="form" action="ActionOffer.php?" method="GET">
+        <form role="form" action="ActionOffer.php?" method="POST">
           <div class="form-group">
             <label for="title">
               Title
@@ -44,7 +45,22 @@ if (isset($_GET['Action'])) {
             </input>
           </div>
           <div class="form-group">
-
+            <label for="category">
+              Category
+            </label></br>
+            <select name="category" class="form-control"> 
+              <option value="NULL" <?php if (!(isset($category)) || $category=='NULL') echo "selected"; ?>>Others</option>
+              <option value="TIC" <?php if ((isset($category)) && $category=='TIC') echo "selected"; ?>>TIC</option>
+              <option value="Administration" <?php if ((isset($category)) && $category=='Administration') echo "selected"; ?>>Administration</option>
+              <option value="Medicine" <?php if ((isset($category)) && $category=='Medicine') echo "selected"; ?>>Medicine</option>
+              <option value="Tourism" <?php if ((isset($category)) && $category=='Tourism') echo "selected"; ?>>Tourism</option>
+              <option value="Education" <?php if ((isset($category)) && $category=='Education') echo "selected"; ?>>Education</option>
+              <option value="Law" <?php if ((isset($category)) && $category=='Law') echo "selected"; ?>>Law</option>
+              <option value="Marketing" <?php if ((isset($category)) && $category=='Marketing') echo "selected"; ?>>Marketing</option>
+              <option value="Customer Support" <?php if ((isset($category)) && $category=='Customer Support') echo "selected"; ?>>Customer Support</option>
+            </select>
+            </div>
+            <div class="form-group">
             <label for="description">
               Description
             </label>
