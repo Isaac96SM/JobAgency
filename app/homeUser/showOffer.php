@@ -40,6 +40,12 @@ if ( (isset($_GET['OfferID'])) && (is_numeric($_GET['OfferID'])) ) {
             echo                    $row['Title'].'
                                 </dd>
                                 <dt>
+                                    Category
+                                </dt>
+                                <dd>';
+                                    if ($row['Category'] == NULL) { echo 'Others';} else { echo $row['Category'];};
+            echo                '</dd>
+                                <dt>
                                     Description
                                 </dt>
                                 <dd>';

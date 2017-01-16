@@ -10,6 +10,16 @@ if ($num > 0) {
         $count = $row['Count'];
     }
 }
+$q1 = "SELECT * FROM users WHERE UserID = '".$_COOKIE['UserID']."'";
+$r1 = @mysqli_query ($dbc, $q1);
+// Count the number of returned rows:
+$num1 = mysqli_num_rows($r1);
+if ($num1 > 0) {
+    while ($row1 = mysqli_fetch_array($r1, MYSQLI_ASSOC)) {
+        $register=$row1['RegistrationDate'];
+    }
+}
+
 ?>
 <div class="container-fluid">
 	<div class="row">
@@ -29,6 +39,19 @@ if ($num > 0) {
 			<h1 class="text-center text-success">
 				<?php echo $count; ?>
 			</h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<h2 class="text-center">
+				Profile
+			</h2>
+			<h2 class="text-center">
+				Email: <?php echo $_COOKIE['Email']; ?>
+			</h2>
+			<h2 class="text-center">
+                Registered: <?php echo $register; ?>
+			</h2>
 		</div>
 	</div>
 </div>

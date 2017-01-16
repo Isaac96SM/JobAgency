@@ -5,7 +5,7 @@ include('headerUser.html');
 //PHP code to show the Offers of the company
 require ('../../models/mysqli_connect.php');
 
-$q = "SELECT offers.Title, offers.OfferID 
+$q = "SELECT offers.OfferID 
 FROM usersoffers 
 INNER JOIN offers 
 ON usersoffers.OfferID = offers.OfferID 
@@ -30,6 +30,9 @@ if($num > 0){ //se ha ejecutado algo
 						        <th>
 							        Title
 						        </th>
+								<th>
+							        Category
+						        </th>
 						        <th>
 							        Description
                                 </th>
@@ -39,7 +42,7 @@ if($num > 0){ //se ha ejecutado algo
 				        </thead>
                         <tbody>';
     while ($row = mysqli_fetch_array($r, MYSQLI_ASSOC)) {
-        $qi = "SELECT OfferID, Description FROM offers where OfferID =".$row['OfferID']." LIMIT 1";
+        $qi = "SELECT * FROM offers where OfferID =".$row['OfferID']." LIMIT 1";
         $ri = @mysqli_query ($dbc, $qi);
         while ($row1 = mysqli_fetch_array($ri, MYSQLI_ASSOC)) { 
             echo '<tr>
@@ -47,15 +50,18 @@ if($num > 0){ //se ha ejecutado algo
 		    echo	    $row1['OfferID'];	
 		    echo    '</td>
 				    <td>';
-		    echo		$row['Title'];
+		    echo		$row1['Title'];
             echo    '</td>
+					<td>';
+						if ($row1['Category'] == NULL) { echo 'Others';} else { echo $row1['Category'];};
+			echo	'</td>
 				    <td>';
 		    echo	    $row1['Description'];
 		    echo	'</td>';
 		    echo	'<td>
-						<a href="Offer.php?OfferID=' . $row['OfferID'] . '">
+						<a href="ActionOffer.php?Action=1&OfferID=' . $row['OfferID'] . '">
 							<button type="button" class="btn btn-sm btn-primary">
-								Quitarse de una oferta
+								Cancel Inscription
 							</button>
 						</a>
                     </td>    
