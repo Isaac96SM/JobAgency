@@ -59,7 +59,6 @@ if ( (isset($_POST['Action'])) && (is_numeric($_POST['Action'])) ) {
                 $category = NULL;
             }
             $q = "UPDATE offers SET Title='".$title."', Description='".$description."', Category='".$category."' WHERE OfferID=".$id;
-
             $r = @mysqli_query ($dbc, $q);
 
             if($r){

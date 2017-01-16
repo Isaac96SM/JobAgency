@@ -14,7 +14,6 @@ if ($num > 0) {
         $count = $row['Count'];
     }
 }
-
 $q1 = "SELECT * FROM companies WHERE CompanyID = '".$_COOKIE['CompanyID']."'";
 $r1 = @mysqli_query ($dbc, $q1);
 // Count the number of returned rows:
