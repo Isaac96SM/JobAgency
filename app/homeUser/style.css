@@ -29,3 +29,14 @@ body {
     height: 10px;
     position: relative;
 }
+.welcome{
+    color:#990033;
+}
+.worktitle{
+    color:#990033;
+}
+.nav{
+    border-radius: 10px;
+    background-color: #f7f7f7;
+    
+}
