@@ -35,8 +35,10 @@ body {
 .worktitle{
     color:#990033;
 }
-.nav{
+.navi{
     border-radius: 10px;
     background-color: #f7f7f7;
-    
+    -webkit-box-shadow: 12px 11px 79px -24px rgba(125,26,51,0.63);
+    -moz-box-shadow: 12px 11px 79px -24px rgba(125,26,51,0.63);
+    box-shadow: 12px 11px 79px -24px rgba(125,26,51,0.63);
 }
