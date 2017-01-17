@@ -2,7 +2,7 @@
     color: white;
     background-color:#990033;
     border-radius: 10px;
-    margin-top: 290px;
+    height: 70px;
 }
 body {
 	margin-top: 0px;
@@ -16,4 +16,16 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
+.container-fluid{
+    min-height: 100%;
+    position: relative;
+}
+.clearfooter{
+    height:450px;
+    clear: both;
+}
+.final{
+    height: 10px;
+    position: relative;
 }
