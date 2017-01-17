@@ -22,7 +22,7 @@ body {
     position: relative;
 }
 .clearfooter{
-    height:450px;
+    height:420px;
     clear: both;
 }
 .final{
@@ -63,6 +63,12 @@ body {
 }
 .worktitle{
     color:#990033;
+    font-size: 48px;
+    text-shadow: 1px 0.5px black;
+}
+
+.table{
+    font-size: 18px;
 }
 .navi{
     border-radius: 10px;
