@@ -1,10 +1,3 @@
-title2{
-    color: white;
-}
-title3{
-    color: white;
-    margin-bottom: 10px;
-}
 #fondo{
     color: white;
     background-color:#990033;
@@ -18,17 +11,47 @@ body {
 }
 
 .full {
-  background: url(../../models/images/wallpaper1.jpg) no-repeat center center fixed; 
+  background: url(../../models/images/home.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 }
-.Incorrect{
-    font-size: 20px;
-    font-style: bold;
-    text-shadow: 1px 0.5px black;
-    color: red;
-    position: absolute;
-    padding-left: 900px;;
+#custom-bootstrap-menu.navbar-default .navbar-brand {
+    color: rgba(255, 255, 255, 1);
+}
+#custom-bootstrap-menu.navbar-default {
+    font-size: 15px;
+    background-color: rgba(148, 0, 0, 1);
+    border-width: 1px;
+    border-radius: 4px;
+}
+#custom-bootstrap-menu.navbar-default .navbar-nav>li>a {
+    color: rgba(0, 0, 0, 1);
+    background-color: rgba(255, 255, 255, 1);
+}
+#custom-bootstrap-menu.navbar-default .navbar-nav>li>a:hover,
+#custom-bootstrap-menu.navbar-default .navbar-nav>li>a:focus {
+    color: rgba(51, 51, 51, 1);
+    background-color: rgba(255, 255, 255, 1);
+}
+#custom-bootstrap-menu.navbar-default .navbar-nav>.active>a,
+#custom-bootstrap-menu.navbar-default .navbar-nav>.active>a:hover,
+#custom-bootstrap-menu.navbar-default .navbar-nav>.active>a:focus {
+    color: rgba(255, 255, 255, 1);
+    background-color: rgba(209, 161, 161, 1);
+}
+#custom-bootstrap-menu.navbar-default .navbar-toggle {
+    border-color: #d1a1a1;
+}
+#custom-bootstrap-menu.navbar-default .navbar-toggle:hover,
+#custom-bootstrap-menu.navbar-default .navbar-toggle:focus {
+    background-color: #d1a1a1;
+}
+#custom-bootstrap-menu.navbar-default .navbar-toggle .icon-bar {
+    background-color: #d1a1a1;
+}
+#custom-bootstrap-menu.navbar-default .navbar-toggle:hover .icon-bar,
+#custom-bootstrap-menu.navbar-default .navbar-toggle:focus .icon-bar {
+    background-color: #940000;
 }
