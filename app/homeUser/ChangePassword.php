@@ -84,25 +84,25 @@ if(isset($_POST['submit'])){
         <div id="cuerpo" class="col-md-12">
             <form role="form" action="" method="post">
                 <div class="form-group col-md-2 col-md-offset-5">
-                    <label for="passwordold" style="color:white;">
+                    <label for="passwordold" style="color:black;">
                         Actual Password
                     </label>
                     <input type="password" class="form-control" name='oldpass' id="oldpass">
                 </div>
                 <div class="form-group col-md-2 col-md-offset-5">
-                    <label for="newpassword1" style="color:white;">
+                    <label for="newpassword1" style="color:black;">
                         New Password
                     </label>
                     <input type="password" class="form-control" name='newpass1' id="newpass1">
                 </div>
                 <div class="form-group col-md-2 col-md-offset-5">
-                    <label for="Password2" style="color:white;">
+                    <label for="Password2" style="color: black;">
                         Repeat New Password
                     </label>
                     <input type="password" class="form-control" name='newpass2' id="newpass2">
                 </div>
                 <div class="col-xs-2 col-xs-offset-5">
-                    <button type="submit" name="submit" class="btn btn-default">
+                    <button type="submit" name="submit" class="btn btn-info">
                         Change Password
                     </button>
                 </div>
