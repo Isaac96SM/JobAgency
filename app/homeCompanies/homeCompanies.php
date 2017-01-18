@@ -23,6 +23,7 @@ if ($num1 > 0) {
         $register=$row1['RegistrationDate'];
     }
 }
+mysqli_close($dbc);
 ?>
 <div class="container-fluid">
 	<div class="row">

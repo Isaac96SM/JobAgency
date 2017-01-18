@@ -89,6 +89,6 @@ if($num > 0){ //se ha ejecutado algo
 }
 
 
-
+mysqli_close($dbc);
 include('footer.html');
 ?>

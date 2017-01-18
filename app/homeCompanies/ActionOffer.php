@@ -114,6 +114,7 @@ if ( (isset($_POST['Action'])) && (is_numeric($_POST['Action'])) ) {
     } else {
         include('../../models/error.php');
     }
+    mysqli_close($dbc);
 } else {
    include('../../models/error.php'); 
 }

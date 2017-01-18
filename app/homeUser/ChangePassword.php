@@ -67,6 +67,7 @@ if(isset($_POST['submit'])){
         } else {
             include('../../models/error.php');
         }
+        mysqli_close($dbc);
     }
 }
 ?>

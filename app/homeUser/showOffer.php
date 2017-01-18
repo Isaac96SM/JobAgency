@@ -77,5 +77,6 @@ if ( (isset($_GET['OfferID'])) && (is_numeric($_GET['OfferID'])) ) {
     } else {
         include('../../models/error.php');
     }
+    mysqli_close($dbc);
 include('footer.html');
 ?>

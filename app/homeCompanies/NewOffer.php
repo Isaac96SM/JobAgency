@@ -26,6 +26,7 @@ if (isset($_GET['Action'])) {
         $category = $row['Category'];
 			}
 		}
+    mysqli_close($dbc);
     } else {
         $action = 1;
     }
