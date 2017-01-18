@@ -10,14 +10,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') { //se ha rellenado el form de logeo
     
     // Check for a first name:
     if (empty($_POST['name'])) {
-        $errors[] = 'You forgot to enter your first name.';
+        $errors[] = 'You forgot to enter your first name';
     } else {
         $name =  mysqli_real_escape_string($dbc, trim(stripslashes(strip_tags($_POST['name']))));
     }
     
     // Check for an email address:
     if (empty($_POST['email'])) {
-        $errors[] = 'You forgot to enter your email address.';
+        $errors[] = 'You forgot to enter your email address';
     } else {
         $newemail =  mysqli_real_escape_string($dbc, trim(stripslashes(strip_tags($_POST['email'])))); 
     }
@@ -25,12 +25,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') { //se ha rellenado el form de logeo
     // Check for a password and match against the confirmed password:
     if (!empty($_POST['pass1'])) {
         if ($_POST['pass1'] != $_POST['pass2']) {
-            $errors[] = 'Your password did not match the confirmed password.';
+            $errors[] = 'Your password did not match the confirmed password';
         } else {
             $pass =  mysqli_real_escape_string($dbc, trim(stripslashes(strip_tags($_POST['pass1']))));
         }
     } else {
-        $errors[] = 'You forgot to enter your password.';
+        $errors[] = 'You forgot to enter your password';
     }
 
     
@@ -84,33 +84,46 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') { //se ha rellenado el form de logeo
             } else { // If it did not run OK.
                         
                 // Public message:
-                echo '<h1>System Error</h1>
-                <p class="error">You could not be registered due to a system error. We apologize for any inconvenience.</p>'; 
-                        
-                // Debugging message:
-                echo '<p>' . mysqli_error($dbc) . '<br /><br />Query: ' . $q . '</p>';
+                include('../../models/error.php');
                                     
             } // End of if ($r) IF.
 
         }else{
-
-            echo '<h1>Error!</h1>
-            <p class="error">The following error(s) occurred:<br />
-            - This email already exists.<br /> </p><p>Please try again.</p><p><br /></p>';
-
+            echo '<div class="row navbar-fixed-top">
+                        <div class="col-md-12">
+                            <div class="alert alert-dismissable alert-danger">
+                                
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+                                    ×
+                                </button>
+                                <h4>
+                                    Error!
+                                </h4> <strong>Warning!</strong> This email already exists.
+                            </div>
+                        </div>
+                    </div>';
         }
        
         mysqli_close($dbc); // Close the database connection.
    
     }else { // Report the errors.
-    
-        echo '<h1>Error!</h1>
-        <p class="error">The following error(s) occurred:<br />';
+        $errorsString = '';
         foreach ($errors as $msg) { // Print each error.
-            echo " - $msg<br />\n";
+            $errorsString += $msg +", ";
         }
-        echo '</p><p>Please try again.</p><p><br /></p>';
-        
+        $errorsString += '.';
+        echo '<div class="row navbar-fixed-top">
+                        <div class="col-md-12">
+                            <div class="alert alert-dismissable alert-danger">                   
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+                                    ×
+                                </button>
+                                <h4>
+                                    Error!
+                                </h4> <strong>Warning!</strong>'.$errorsString.'
+                            </div>
+                        </div>
+                    </div>';        
     } // End of if (empty($errors)) IF.
 
 }

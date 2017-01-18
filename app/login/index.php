@@ -27,7 +27,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') { //se ha rellenado el form de logeo
 				}			
 
 			} else {
-				echo '<span class="text-center Incorrect">Incorrect credentials</span>';
+				echo '<div class="row navbar-fixed-top" >
+                        <div class="col-md-12">
+                            <div class="alert alert-dismissable alert-danger">                   
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+                                    ×
+                                </button>
+                                <h4>
+                                    Error!
+									<strong>Warning!</strong> Incorrect Credentials
+                                </h4> 
+                            </div>
+                        </div>
+                    </div>';
 			}
 			
 		}
