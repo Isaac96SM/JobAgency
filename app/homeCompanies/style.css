@@ -1,15 +1,17 @@
-title2{
-    color: white;
+.dashboard{
+    font-weight: bold;
+    margin-left: 5%;
+    color: #990033;
+    text-shadow: 0.8px 0.2px black;
 }
-title3{
-    color: white;
-    margin-bottom: 10px;
-}
-#fondo{
+
+
+
+#footer{
     color: white;
     background-color:#990033;
     border-radius: 10px;
-    margin-top: 290px;
+    height: 70px;
 }
 body {
 	margin-top: 0px;
@@ -18,17 +20,104 @@ body {
 }
 
 .full {
-  background: url(../../models/images/wallpaper1.jpg) no-repeat center center fixed; 
+  background: url(../../models/images/home.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 }
-.Incorrect{
-    font-size: 20px;
-    font-style: bold;
+.container-fluid{
+    min-height: 100%;
+    position: relative;
+}
+.clearfooter{
+    height:400px;
+    clear: both;
+}
+.final{
+    height: 10px;
+    position: relative;
+}
+.welcome{
+    font-size: 48px;
+    font-weight: bold;
+    color: #AE033E;
+    text-shadow: 1px 0.5px white;
+}
+.numoffers{
+    font-weight: bold;
+    color:#AE033E;
     text-shadow: 1px 0.5px black;
-    color: red;
-    position: absolute;
-    padding-left: 900px;;
+    border: outset;
+    border-radius:10px;
+}
+.inscriptions{
+    font-size: 36px;
+    font-weight: bold;
+    color:#AE033E;
+    text-shadow: 1px 0.5px black;
+}
+.profile{
+    font-size: 32px;
+    font-weight: bold;
+    text-decoration: underline;
+    color:#AE033E;
+    text-shadow: 0.8px 0.2px black;
+}
+.allprofile{
+    color: black;
+    text-shadow: 0.5px 0.2px lightgray;
+    background-color: transparent;
+    border-radius: 10px;
+    -moz-box-shadow: 0px 0px 30px #ffffff; 
+    -webkit-box-shadow: 0px 0px 30px #ffffff; 
+    box-shadow: 0px 0px 30px #ffffff;
+}
+.worktitle{
+    color:#990033;
+    font-size: 48px;
+    text-shadow: 1px 0.5px black;
+}
+.worktitle2{
+    color:#990033;
+    font-size: 22px;
+    text-shadow: 0.8px 0.2px black;
+}
+
+
+th{
+    font-size: 22px;
+    color:#AE033E;
+    text-shadow: 0.8px 0.2px white;
+}
+td{
+    font-size: 18px;
+    text-align: justify;
+}
+.offer{
+    border: outset;
+    border-radius:10px;
+}
+dt{
+    color: #c20a4e;
+    font-weight: bold;
+    font-size: 20px;
+    text-shadow: 0.8px 0.2px black;
+}
+dd{
+    font-size:18px;
+    text-shadow: 0.8px 0.2px white;
+}
+.labels{
+    font-size:18px;
+   color:black;
+    text-shadow: 2px 1px white;
+    
+}
+.navi{
+    border-radius: 10px;
+    background-color: #f7f7f7;
+    -webkit-box-shadow: 12px 11px 79px -24px rgba(125,26,51,0.63);
+    -moz-box-shadow: 12px 11px 79px -24px rgba(125,26,51,0.63);
+    box-shadow: 12px 11px 79px -24px rgba(125,26,51,0.63);
 }

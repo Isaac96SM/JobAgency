@@ -18,7 +18,7 @@ if($num > 0){ //se ha ejecutado algo
 			        <h3 class="text-center worktitle ">';
 	echo                $_COOKIE['Name']." Offers";
 	echo	        '</h3>
-			        <table class="table table-bordered">
+			        <table class="table table-hover">
 				        <thead>
 					        <tr>
 						        <th>

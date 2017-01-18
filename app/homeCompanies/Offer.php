@@ -25,42 +25,43 @@ if ( (isset($_GET['OfferID'])) && (is_numeric($_GET['OfferID'])) ) {
 }
     if($num > 0 && $check) {
         while ($row = mysqli_fetch_array($r, MYSQLI_ASSOC)) {
-            echo '<div class="container-fluid">
+            echo '<div class=" offer container-fluid">
                     <div class="row">
                         <div class="col-md-6">
-                            <h3 class="text-center text-info">
+                            <h3 class="worktitle text-center">
                                 Offer Information
                             </h3>
-                            <dl>
+                            <dl style="text-align:center;">
                                 <dt>
-                                    Title
+                                    Title </br>
                                 </dt>
                                 <dd>';
             echo                    $row['Title'].'
-                                </dd>
+                                </br></br></dd>
                                 <dt>
-                                    Category
+                                    Category </br>
                                 </dt>
                                 <dd>';
                                     if ($row['Category'] == NULL) { echo 'Others';} else { echo $row['Category'];};
-            echo                '</dd>
+            echo                '</br></br></dd>
                                 <dt>
-                                    Description
+                                    Description </br>
                                 </dt>
                                 <dd>';
             echo                    $row['Description'].'
-                                </dd>
+                                </br></br></dd>
                                 <dt>
-                                    Actions
+                                    Actions </br>
                                 </dt>
                                 <dd>
+                                </br>
                                     <a href="NewOffer.php?Action=2&OfferID=' . $row['OfferID'] . '">
-                                        <button type="button" class="btn btn-sm btn-warning">
+                                        <button type="button" class="btn btn-lg btn-info">
                                             Edit Offer
                                         </button>
-                                    </a></br>
+                                    </a></br></br>
                                     <a href="ActionOffer.php?Action=3&OfferID=' . $row['OfferID'] . '">
-                                        <button type="button" class="btn btn-sm btn-danger">
+                                        <button type="button" class="btn btn-lg btn-danger">
                                             Remove Offer
                                         </button>
                                     </a>
@@ -68,10 +69,10 @@ if ( (isset($_GET['OfferID'])) && (is_numeric($_GET['OfferID'])) ) {
                             </dl>
                         </div>
                         <div class="col-md-6">
-                            <h3 class="text-center text-info">
+                            <h3 class="text-center worktitle">
                                 Inscriptions
                             </h3>
-                            <table class="table table-bordered">
+                            <table class="table table-hover">
                                 <thead>
                                     <tr>
                                         <th>

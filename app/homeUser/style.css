@@ -78,6 +78,11 @@ body {
     font-size: 48px;
     text-shadow: 1px 0.5px black;
 }
+.worktitle2{
+    color:#990033;
+    font-size: 22px;
+    text-shadow: 0.8px 0.2px black;
+}
 
 
 th{
@@ -89,9 +94,23 @@ td{
     font-size: 18px;
     text-align: justify;
 }
+.offer{
+    border: outset;
+    border-radius:10px;
+}
+dt{
+    color: #c20a4e;
+    font-weight: bold;
+    font-size: 26px;
+    text-shadow: 0.8px 0.2px black;
+}
+dd{
+    font-size:20px;
+    text-shadow: 0.8px 0.2px white;
+}
 .labels{
     font-size:18px;
-   color:black;
+    color:black;
     text-shadow: 2px 1px white;
     
 }
