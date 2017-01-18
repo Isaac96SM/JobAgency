@@ -97,8 +97,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') { //se ha rellenado el form de logeo
                                     ×
                                 </button>
                                 <h4>
-                                    Error!
-                                </h4> <strong>Warning!</strong> This email already exists.
+                                    <strong>Warning!</strong> This email already exists.
+                                </h4> 
                             </div>
                         </div>
                     </div>';
@@ -109,9 +109,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') { //se ha rellenado el form de logeo
     }else { // Report the errors.
         $errorsString = '';
         foreach ($errors as $msg) { // Print each error.
-            $errorsString += $msg +", ";
+            $errorsString = $errorsString.$msg.". ";
         }
-        $errorsString += '.';
         echo '<div class="row navbar-fixed-top">
                         <div class="col-md-12">
                             <div class="alert alert-dismissable alert-danger">                   
@@ -119,8 +118,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') { //se ha rellenado el form de logeo
                                     ×
                                 </button>
                                 <h4>
-                                    Error!
-                                </h4> <strong>Warning!</strong>'.$errorsString.'
+                                    <strong>Warning!</strong> '.$errorsString.'
+                                </h4> 
                             </div>
                         </div>
                     </div>';        

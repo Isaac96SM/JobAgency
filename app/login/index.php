@@ -34,7 +34,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') { //se ha rellenado el form de logeo
                                     ×
                                 </button>
                                 <h4>
-                                    Error!
 									<strong>Warning!</strong> Incorrect Credentials
                                 </h4> 
                             </div>
