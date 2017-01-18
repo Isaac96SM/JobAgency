@@ -90,7 +90,7 @@
 	</div>
 	<div class="row" style="clear: both;">
 		<div class="col-md-12">
-			<p id="fondo" class="text-center text-info">
+			<p id="footer" class="text-center text-info">
 				Copyright &#169; 2016 JobNow!</br>
 				All rights reserved
 
