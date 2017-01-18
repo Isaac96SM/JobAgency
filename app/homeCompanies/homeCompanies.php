@@ -39,14 +39,14 @@ if ($num1 > 0) {
 			</h3>
 		</div>
 		<div class="col-md-4">
-			<h1 class="numoffers text-center">
+			<h1 class="numoffers text-center text-success">
 				<?php echo $count; ?>
 			</h1>
 		</div>
 	</div>
 	<div class="allprofile row">
 		<div class="col-md-12">
-			<h2 class="text-center">
+			<h2 class="profile text-center">
 				Profile
 			</h2>
 			<h2 class="text-center">
