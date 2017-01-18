@@ -60,7 +60,7 @@ if($num > 0){ //se ha ejecutado algo
 		    echo	'</td>';
 		    echo	'<td>
 						<a href="ActionOffer.php?Action=1&OfferID=' . $row['OfferID'] . '">
-							<button type="button" class="btn btn-sm btn-primary">
+							<button type="button" class="btn btn-sm btn-danger">
 								Cancel Inscription
 							</button>
 						</a>

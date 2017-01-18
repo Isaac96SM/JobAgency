@@ -64,7 +64,7 @@ if($num > 0){ //se ha ejecutado algo
 			if ($inscribed) {
 				echo	'</td>
 						<td>
-								<button type="button" class="btn disabled btn-sm btn-primary">
+								<button type="button" class="btn disabled btn-sm btn-success">
 									You are inscribed
 								</button>
 						</td>      
