@@ -18,7 +18,7 @@ body {
 }
 
 .full {
-  background: url(../../models/images/wallpaper1.jpg) no-repeat center center fixed; 
+  background: url(../../models/images/wallpaper1.jpg) no-repeat center center scroll; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -31,4 +31,7 @@ body {
     color: red;
     position: absolute;
     padding-left: 900px;;
+}
+.page-header{
+    border-bottom: none;
 }
