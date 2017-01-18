@@ -31,8 +31,7 @@ if ( (isset($_POST['Action'])) && (is_numeric($_POST['Action'])) ) {
             } else {
                 $href = 'NewOffer.php';
             }
-            echo '<div class="container-fluid">
-                    <div class="row">
+            echo '<div class="row">
                         <div class="col-md-12">
                             <div class="alert alert-dismissable alert-danger">
                                 
@@ -44,8 +43,7 @@ if ( (isset($_POST['Action'])) && (is_numeric($_POST['Action'])) ) {
                                 </h4> <strong>Warning!</strong> Missing data. <a href="'.$href.'" class="alert-link">Return</a>
                             </div>
                         </div>
-                    </div>
-                </div>';
+                    </div>';
         }
     } 
     elseif ($Action == 2) {
