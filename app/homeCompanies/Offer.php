@@ -15,7 +15,7 @@ if ( (isset($_GET['OfferID'])) && (is_numeric($_GET['OfferID'])) ) {
 } elseif ((isset($_POST['Title']))) {
     require ('../../models/mysqli_connect.php');
     $title = $_POST['Title'];
-    $q = "SELECT * FROM offers WHERE CompanyID = ".$_COOKIE['CompanyID']." AND Title LIKE '%".$title."%'";
+    $q = "SELECT * FROM offers WHERE CompanyID = ".$_COOKIE['CompanyID']." AND (Title LIKE '%".$title."%' OR Description LIKE '%".$title."%' OR Category LIKE '%".$title."%')";
 
     $r = @mysqli_query ($dbc, $q);
 
