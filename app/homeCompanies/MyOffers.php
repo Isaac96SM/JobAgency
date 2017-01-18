@@ -15,10 +15,10 @@ if($num > 0){ //se ha ejecutado algo
     echo '<div class="container-fluid">
 	        <div class="row">
 		        <div class="col-md-12">
-			        <h3 class="text-center text-info">';
+			        <h3 class="text-center worktitle ">';
 	echo                $_COOKIE['Name']." Offers";
 	echo	        '</h3>
-			        <table class="table table-bordered">
+			        <table class="table table-hover">
 				        <thead>
 					        <tr>
 						        <th>
@@ -68,7 +68,7 @@ if($num > 0){ //se ha ejecutado algo
 		    echo	'</td>
                     <td>
 						<a href="Offer.php?OfferID=' . $row['OfferID'] . '">
-							<button type="button" class="btn btn-sm btn-primary">
+							<button type="button" class="btn btn-default btn-primary">
 								View
 							</button>
 						</a>

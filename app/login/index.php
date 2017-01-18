@@ -1,5 +1,4 @@
 <?php
-
 if ($_SERVER['REQUEST_METHOD'] == 'POST') { //se ha rellenado el form de logeo
 
 	require ('../../models/mysqli_connect.php'); //nos conectamos a la DB
@@ -28,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') { //se ha rellenado el form de logeo
 				}			
 
 			} else {
-				echo 'Incorrect credentials';
+				echo '<span class="text-center Incorrect">Incorrect credentials</span>';
 			}
 			
 		}
@@ -58,12 +57,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') { //se ha rellenado el form de logeo
 						exit;
 					}
 				} else {
-					echo 'Incorrect credentials';
+					echo '<span class=" text-center Incorrect">Incorrect credentials</span>';
 				}
 			}
 		}else{
 
-			echo "No te has logeado, nombre o contraseña incorrecto.";
+			echo '<span class=" text-center Incorrect">No te has logeado, nombre o contraseña incorrecto.</span>';
 
 		}
 	}
