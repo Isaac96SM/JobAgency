@@ -37,7 +37,7 @@ if (isset($_GET['Action'])) {
   <div class="container-fluid">
     <div class="row">
       <div class="worktitle2 col-md-12">
-        <form role="form" action="ActionOffer.php?" method="POST">
+        <form role="form" action="ActionOffer.php?" method="GET">
           <div class="form-group">
             <label for="title">
               Title
