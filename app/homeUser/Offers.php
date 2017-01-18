@@ -9,13 +9,13 @@ $r = @mysqli_query ($dbc, $q);
 $num = mysqli_num_rows($r);
 if($num > 0){ //se ha ejecutado algo
     
-    echo '<div class="container-fluid">
+    echo '<div class="table-responsive container-fluid">
 	        <div class="row">
 		        <div class="col-md-12">
-			        <h3 class="text-center text-info">';
+			        <h3 class="text-center worktitle">';
 	echo               "Work Offers";
 	echo	        '</h3>
-			        <table class="table table-bordered">
+			        <table class="table table-hover">
 				        <thead>
 					        <tr>
 						        <th>
@@ -64,7 +64,7 @@ if($num > 0){ //se ha ejecutado algo
 			if ($inscribed) {
 				echo	'</td>
 						<td>
-								<button type="button" class="btn disabled btn-sm btn-primary">
+								<button type="button" class="btn disabled btn-sm btn-success">
 									You are inscribed
 								</button>
 						</td>      

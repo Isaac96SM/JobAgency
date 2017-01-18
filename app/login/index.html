@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="es">
+<html class="full" lang="es">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" href="favicon.ico">
 
     <title>Login in JobNow!</title>
 
@@ -27,24 +28,24 @@
 		</div>	
 	</div>
 	<div class="row">
-		<div class="col-md-12">
+		<div class="col-xs-12">
 			<h3 name="title2" class="text-center" style="color:white;">
 				Login to use the platform
 			</h3>
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-md-12">
+		<div class="col-xs-12">
 			</br>
 			<form role="form" action="index.php" method="post">
-				<div class="form-group col-md-2 col-md-offset-5">
+				<div class="form-group col-xs-2 col-xs-offset-5">
 					 
 					<label for="Email1" class="text-center" style="color:white;" >
 						Email address
 					</label>
 					<input type="email" class="text-center form-control" name="email" id="Email1">
 				</div>
-				<div class="form-group col-md-2 col-md-offset-5">
+				<div class="form-group col-xs-2 col-xs-offset-5">
 					 
 					<label for="Password1" style="color:white;">
 						Password
@@ -53,16 +54,21 @@
 				</div>
 		
 				<div class="col-xs-2 col-xs-offset-5">
-				<button type="submit" class="btn btn-default" style="">
+				<button type="submit" class="btn btn-default" >
 					Submit
 				</button>
+				<a class="btn btn-default" value="Go to my link location" href="../register/index.php" />
+					Register
+				</a>
+				
 				</div>
 			</form>
 		</div>
 	</div>
+
 	<div class="row" style="clear: both;">
 		<div class="col-xs-12">
-			<p id="fondo" class="text-center text-info" style="margin-top: 293px;">
+			<p id="fondo" class="text-center text-info col-xs-12" >
 				Copyright &#169; 2016 JobNow!</br>
 				All rights reserved
 

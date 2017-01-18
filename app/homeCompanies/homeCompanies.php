@@ -27,26 +27,26 @@ if ($num1 > 0) {
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-12">
-			<h1 class="text-center">
+			<h1 class="welcome text-center">
                 Welcome <?php echo $_COOKIE['Name'].'!'; ?>
 			</h1>
 		</div>
 	</div>
 	<div class="row">
 		<div class="col-md-8">
-			<h3 class="text-info text-center">
+			<h3 class="inscriptions text-center">
 				Active Offers:
 			</h3>
 		</div>
 		<div class="col-md-4">
-			<h1 class="text-center text-success">
+			<h1 class="numoffers text-center text-success">
 				<?php echo $count; ?>
 			</h1>
 		</div>
 	</div>
-	<div class="row">
+	<div class="allprofile row">
 		<div class="col-md-12">
-			<h2 class="text-center">
+			<h2 class="profile text-center">
 				Profile
 			</h2>
 			<h2 class="text-center">
