@@ -39,7 +39,7 @@ if ($num1 > 0) {
 			</h3>
 		</div>
 		<div class="col-md-4">
-			<h1 class="inscriptions text-center">
+			<h1 class="numoffers text-center">
 				<?php echo $count; ?>
 			</h1>
 		</div>
